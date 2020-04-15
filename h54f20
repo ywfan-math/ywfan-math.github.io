@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Yu-Wei Fan | Math H54</title>
+    </head>  
+    <body>
+        <h1>Math H54: Honors Linear Algebra and Differential Equations, Fall 2019</h1>
+        
+        
+        <hr>
+        
+        <h3>Announcement</h3>
+        <ul>
+            
+            <li>
+                The
+                <a href="https://ywfan-math.github.io/h54f19_syllabus.pdf">syllabus</a>.
+                Please read it carefully!
+            </li>
+            
+            <li>
+                <a href="https://dsp.berkeley.edu">DSP</a>
+                students should speak to the instructor as soon as possible, even if you do not have a letter yet.
+            </li>
+            
+            <li>
+                <a href="https://teaching.berkeley.edu/checklist-scheduling-conflicts-academic-requirements/#students">Guildlines</a>
+                on what to do if you think you may have a conflict between this class and your extracurricular activities.
+                In particular, you must speak to the instructor before the end of the second week of classes.
+            </li>
+            
+            <li>
+                Submit questions for discussion section
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFVP5ed0rufj-P6di3bw9Begc_LGF4TBCW7AKAKVnhs2KoaQ/viewform">here</a>.
+            </li>
+            
+            <li>
+                Submit anonymous comments/concerns/feedback/suggestions to me
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScu9Hxt4OYyY5AkE_IUEp4ga10-7QVl2Fh0imF50ZfavRLmow/viewform?usp=sf_link">here</a>.
+            </li>
+        </ul>
+
+        <hr>
+        
+        <h3>Course Information</h3>
+        
+        Honors version of Math 54. The course has two parts:
+        
+        <ul>
+            <li>
+                <b>Part I: Linear algebra.</b> Basic linear algebra; matrix arithmetic and determinants;
+                vector spaces and inner product spaces; eigenvalues and eigenvectors; linear transformations.
+            </li>
+            
+            <li>
+                <b>Part II: Differential equations.</b> Homogeneous ordinary differential equations;
+                first-order differential equations with constant coefficients; Fourier series and partial
+                differential equations.
+            </li>
+        </ul>
+        
+        <b>Honors Course:</b> This course is aimed at students with a strong ability and interest in mathematics.
+        I will follow the curriculum for Math 54 but will try to provide greater rigor (real proofs),
+        greater insight, and more interesting exercises. I don't expect the grading scale to be either higher or
+        lower than for regular Math 54, but you will have to do more thinking to get a good grade; I hope that
+        you will enjoy this. If you start H54 but find in a few weeks that it is not the course for you, it should
+        be possible to transfer to regular Math 54 and not be at a disadvantage.
+        <br>
+        
+        For more information on honors courses in the math department, see the department's web page on
+        <a href="https://math.berkeley.edu/courses/choosing/honors-courses">honors courses</a>.
+        <br><br>
+        
+        <b>Grading:</b> Homework 10%, Quizzes 10%, First Midterm 20%, Second Midterm 20%, Final 40%.<br>
+        <b>There will be no makeup exams.</b>
+        However, the lowest score of the two midterms will be replaced by the final exam score if this increases
+        your total score. So you can miss one midterm without too much damage. On the other hand, missing both midterms
+        or missing the final will seriously harm your grade.
+        <b>Please check the dates now to make sure that you have no
+            unavoidable conflicts!</b>
+        (Check the final exam schedule
+        <a href="https://registrar.berkeley.edu/scheduling/academic-scheduling/final-exam-guide-schedules">here</a>.)
+        <br><br>
+        
+        <b>Contact Info:</b>
+        <ul>
+            <li>
+                Yu-Wei Fan (Instructor) ywfan at berkeley dot edu 
+            </li>
+            <li>
+                Kubrat Danailov (GSI) danailov at berkeley dot edu
+            </li>
+        </ul>
+        
+        <hr>
+        
+        <h3>Course Events</h3>
+        
+        <b>Lecture:</b> Tu/Th 9:30-11 at 3 Evans
+        <br><br>
+        
+        <b>Discussion Section:</b>  M/W/F 11-12 at 740 Evans
+        <br><br>
+        
+        <b>Office Hours: (draft: subject to change)</b>
+        <ul>
+            <li>Tuesday: (Yu-Wei) 2:30-4pm at 735 Evans
+            </li>
+            <li>Wednesday: (Yu-Wei) 5:15-6:45pm at 735 Evans
+            </li>
+            <li>Friday: (Kubrat) 9-11am at 741 Evans
+            </li>
+        </ul>
+        Or by appointment (email me).
+        <br><br>
+        
+        <b>Exam Dates:</b>
+        <ul>
+            <li>First Midterm: October 3, in class
+            </li>
+            <li>Second Midterm: November 7, in class
+            </li>
+            <li>Final: December 17, 3-6pm
+            </li>
+        </ul>
+        
+        <hr>
+        
+        <h3>Course Materials</h3>
+        <ul>
+            <li><b>Textbook:</b> Lay, Nagle, Saff, and Snider, <i>Linear Algebra and Differential Equations</i>
+                (UC Berkeley custom edition) <br>
+                Part of the homework will be assigned by the exercise numbers in the textbook,
+                so please get the correct edition!
+            </li>
+            
+            <li>
+                <b>First Midterm:</b>
+                <a href="https://ywfan-math.github.io/h54f19_midterm1.pdf">Problems</a>,
+                <a href="https://ywfan-math.github.io/h54f19_midterm1_sol.pdf">solutions</a>,
+                and
+                <a href="https://ywfan-math.github.io/h54f19_midterm1_grading.pdf">grading scheme</a>;
+                <a href="https://ywfan-math.github.io/h54f19_midterm1_practice.pdf">Practice exam</a>
+                and
+                <a href="https://ywfan-math.github.io/h54f19_midterm1_practice_sol.pdf">solutions</a>;
+                <a href="https://ywfan-math.github.io/h54f19_midterm1_review.pdf">Review</a>.
+            </li>
+            
+            <li>
+                <b>Second Midterm:</b>
+                <a href="https://ywfan-math.github.io/h54f19_midterm2.pdf">Problems</a>
+                and
+                <a href="https://ywfan-math.github.io/h54f19_midterm2_sol.pdf">solutions</a>;
+                <a href="https://ywfan-math.github.io/h54f19_midterm2_practice.pdf">Practice exam</a>
+                and
+                <a href="https://ywfan-math.github.io/h54f19_midterm2_practice_sol.pdf">solutions</a>.
+            </li>
+            
+            <li>
+                <b>Final exam:</b>
+                <a href="https://ywfan-math.github.io/h54f19_final.pdf">Problems</a>
+                and
+                <a href="https://ywfan-math.github.io/h54f19_final_sol.pdf">solutions</a>;
+                <a href="https://ywfan-math.github.io/h54f19_final_practice.pdf">Practice exam</a>
+                and
+                <a href="https://ywfan-math.github.io/h54f19_final_practice_sol.pdf">solutions</a>;
+                Math 49 Final
+                <a href="https://ywfan-math.github.io/h54f19_final_49.pdf">problems</a>
+                and
+                <a href="https://ywfan-math.github.io/h54f19_final_49_sol.pdf">solutions</a>.
+            </li>
+            
+            <li>
+                <a href="https://ywfan-math.github.io/104f19_proofs.pdf">Introduction to mathematical arguments</a>
+                by Michael Hutchings, for people who are unfamiliar with mathematical proofs.
+            </li>
+            
+            <li>Supplementary reading:
+                <a href="https://en.wikipedia.org/wiki/Perron%E2%80%93Frobenius_theorem">
+                    Perron–Frobenius theorem</a>;
+                <a href="https://www-fourier.ujf-grenoble.fr/~lanneau/articles/tellme.pdf">
+                    Pseudo-Anosov maps</a>;
+                <a href="https://www.maths.ed.ac.uk/~v1ranick/papers/conwaysens.pdf">
+                    Can you see the values of 3x^2+6xy-5y^2?</a>;
+                <a href="https://ocw.mit.edu/courses/mathematics/18-303-linear-partial-differential-equations-fall-2006/lecture-notes/waveeqni.pdf">
+                    Wave equation</a>.
+            </li>
+            
+        </ul>
+        
+        <hr>
+        
+        <h3>Homework</h3>
+        
+        Homework will be assigned weekly. Assignments will be posted no later than midnight on Tuesday
+        and will be due in discussion on the following Wednesday.
+        You have to staple your work if it is more than a page.
+        Homework will be graded based on completion.
+        The lowest homework grade will be dropped.
+        <br><br>
+        
+        <b>Late homework policy:</b> As a rule late homework will not be accepted under any circumstances. If you have a medical circumstance
+        that prevents you from turning in homework, you will need a doctor's note to receive an extension. Furthermore,
+        a note that merely says “Student visited today” is not very helpful; it’s better to have a note that says something
+        like “Student may be unable to complete assignments for the next N days.” This will help me decide what length of
+        extension is appropriate.
+        <br><br>
+        
+        <b>Collaboration:</b> You are encouraged to work together on the assignments. In your solutions, you should
+        acknowledge the students with whom you worked, and you should write your solutions on your own. For any solution
+        you submit, you should understand it well enough that you can explain it to someone else and answer questions
+        about it. If you find yourself writing down things that you can’t explain, you should go back and think more about
+        the problem. Otherwise you’re doing yourself a disservice, and you might suffer more when it comes time to take
+        the midterms/exam.
+        <br><br>
+        
+        <b>Homework Assignments:</b>
+        
+        <ul>
+            <li>Due September 4: <a href="https://ywfan-math.github.io/h54f19_hw01.pdf">HW1</a>
+            </li>
+            
+            <li>Due September 11: <a href="https://ywfan-math.github.io/h54f19_hw02.pdf">HW2</a>
+            </li>
+            
+            <li>Due September 18: <a href="https://ywfan-math.github.io/h54f19_hw03.pdf">HW3</a>
+            </li>
+            
+            <li>Due September 25: <a href="https://ywfan-math.github.io/h54f19_hw04.pdf">HW4</a>
+            </li>
+            
+            <li>Due October 2: <a href="https://ywfan-math.github.io/h54f19_hw05.pdf">HW5</a>
+            </li>
+            
+            <li>Due October 16: <a href="https://ywfan-math.github.io/h54f19_hw06.pdf">HW6</a>
+            </li>
+            
+            <li>Due October 23: <a href="https://ywfan-math.github.io/h54f19_hw07.pdf">HW7</a>
+            </li>
+            
+            <li>Due October 30: <a href="https://ywfan-math.github.io/h54f19_hw08.pdf">HW8</a>
+            </li>
+            
+            <li>Due November 6: <a href="https://ywfan-math.github.io/h54f19_hw09.pdf">HW9</a>
+            </li>
+            
+            <li>Due November 20: <a href="https://ywfan-math.github.io/h54f19_hw10.pdf">HW10</a>
+            </li>
+            
+            <li>Due December 4: <a href="https://ywfan-math.github.io/h54f19_hw11.pdf">HW11</a>
+            </li>
+            
+        </ul>
+        
+        <hr>
+        
+        <h3>Quizzes</h3>
+        
+        Quizzes will be given on most Fridays in discussion section.
+        There will be no makeup quizzes, but the lowest quiz score will be dropped.
+        One purpose of the quizzes is to help make sure that you keep up with the material.
+        Later parts of the course depend heavily on the earlier parts, so it can be hard to catch up if you fall behind.
+        
+        <br><br>
+        
+        Tentative schedule for quizzes:
+        
+        <ul>
+            <li>September 6: Quiz 1
+            </li>
+            
+            <li>September 13: Quiz 2
+            </li>
+            
+            <li>September 20: Quiz 3
+            </li>
+            
+            <li>September 27: Quiz 4
+            </li>
+            
+            <li>October 11: Quiz 5
+            </li>
+            
+            <li>October 18: Quiz 6
+            </li>
+            
+            <li>October 25: Quiz 7
+            </li>
+            
+            <li>November 1: Quiz 8
+            </li>
+            
+            <li>November 15: Quiz 9
+            </li>
+            
+            <li>November 22: Quiz 10
+            </li>
+            
+            <li>December 6: Quiz 11
+            </li>
+            
+        </ul>
+        
+        
+        
+        
+        <hr>
+        
+        <h3>Topic Schedule (tentative: subject to change)</h3>
+        
+        This schedule will be updated as we go along.
+        <br><br>
+        
+        <b>Week 1 (August 29):</b> Section 1.1-1.3
+        <ul>
+            <li>
+                Th. Lecture 1: System of linear equations, row operations, vectors
+            </li>
+        </ul>
+        
+        <b>Week 2 (September 3 and 5):</b> Section 1.4-1.5, 1.7-1.9
+        <ul>
+            <li>
+                Tu. Lecture 2: Matrix-vector product, solutions sets of linear systems
+            </li>
+            <li>
+                Th. Lecture 3: Linearly independence, linear transformations
+            </li>
+        </ul>
+        
+        <b>Week 3 (September 10 and 12):</b> Section 2.1-2.3, 3.1
+        <ul>
+            <li>
+                Tu. Lecture 4: Matrix operations, inverse matrices
+            </li>
+            <li>
+                Th. Lecture 5: Invertibility criterion, determinants
+            </li>
+        </ul>
+        
+        <b>Week 4 (September 17 and 19):</b> Section 3.2, 3.3, 4.1, 4.2
+        <ul>
+            <li>
+                Tu. Lecture 6: Determinants, Cramer's Rule
+            </li>
+            <li>
+                Th. Lecture 7: Vector spaces, null/column spaces, linear transformations
+            </li>
+        </ul>
+        
+        <b>Week 5 (September 24 and 26):</b> Section 4.3-4.7
+        <ul>
+            <li>
+                Tu. Lecture 8: Basis and coordinates
+            </li>
+            <li>
+                Th. Lecture 9: Dimension, change of basis
+            </li>
+        </ul>
+        
+        <b>Week 6 (October 1 and 3):</b>
+        <ul>
+            <li>
+                Tu. Lecture 10: Review for first midterm
+            </li>
+            <li>
+                Th. Lecture 11: <b>First Midterm</b>
+            </li>
+        </ul>
+        
+        <b>Week 7 (October 8 and 10):</b> Section 5.1-5.3
+        <ul>
+            <li>
+                Tu. Lecture 12: Eigenspaces, similarity, diagonalizable
+            </li>
+            <li>
+                Th. Lecture 13: <b>Class cancelled due to power outage</b>
+            </li>
+        </ul>
+        
+        <b>Week 8 (October 15 and 17):</b> Section 5.4, 5.5, 6.1, 6.2, 6.7
+        <ul>
+            <li>
+                Tu. Lecture 14: Similarity and linear transformations, complex eigenvalues, and more...
+            </li>
+            <li>
+                Th. Lecture 15: Inner product space, length, orthogonality, orthogonal projection, orthogonal matrix
+            </li>
+        </ul>
+        
+        <b>Week 9 (October 22 and 24):</b> Section 6.3-6.5, 6.7, 7.1
+        <ul>
+            <li>
+                Tu. Lecture 16: Orthogonal decomposition, Gram-Schmidt process
+            </li>
+            <li>
+                Th. Lecture 17: Least square problem, symmetric matrices
+            </li>
+        </ul>
+        
+        <b>Week 10 (October 29 and 31):</b> Section 7.2
+        <ul>
+            <li>
+                Tu. Lecture 18: Quadratic forms; Conway's well, river, lakes, and weir
+            </li>
+            <li>
+                Th. Lecture 19: Preview of differential equations: Brachistochrone problem
+            </li>
+        </ul>
+        
+        <b>Week 11 (November 5 and 7):</b> 
+        <ul>
+            <li>
+                Tu. Lecture 20: Review for Second Midterm
+            </li>
+            <li>
+                Th. Lecture 21: <b>Second Midterm</b>
+            </li>
+        </ul>
+        
+        <b>Week 12 (November 12 and 14):</b> Section 4.2-4.6 (Part II of the textbook)
+        <ul>
+            <li>
+                Tu. Lecture 22: Homogeneous second-order differential equations
+            </li>
+            <li>
+                Th. Lecture 23: Nonhomogeneous second-order differential equations
+            </li>
+        </ul>
+        
+        <b>Week 13 (November 19 and 21):</b> Section 9.4-9.8
+        <ul>
+            <li>
+                Tu. Lecture 24: Homogeneous linear systems for diagonalizable matrices
+            </li>
+            <li>
+                Th. Lecture 25: Matrix exponentials, complex eigenvalues, non-homogeneous linear systems
+            </li>
+        </ul>
+        
+        <b>Week 14 (November 26):</b> Section 10.2, 10.3, 10.4
+        <ul>
+            <li>
+                Tu. Lecture 26: Fourier series, (homogeneous) heat equation
+            </li>
+        </ul>
+        
+        <b>Week 15 (December 3 and 5):</b> Section 10.5, 10.6
+        <ul>
+            <li>
+                Tu. Lecture 27: Heat equation, wave equation
+            </li>
+            <li>
+                Th. Lecture 28: Traveling wave, energy method
+            </li>
+        </ul>
+        
+        
+
+        
+        
+
+    </body>
+</html>
