@@ -40,7 +40,18 @@
             </li>
         </ul>
         
- 
+<p><button onclick="myFunction()">test</button></p>
+<div id="myDIV"> </div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.innerHTML === " ") {
+    x.innerHTML = "test!";
+  } else {
+    x.innerHTML = " ";
+  }
+}
+</script>
         
         
         <hr>
