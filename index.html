@@ -17,21 +17,6 @@
         <title>Yu-Wei Fan</title>
         <link rel="icon" href="favicon.jpg">
         
-function readMore(city) {
-    let dots = document.querySelector(`.card[data-city="${city}"] .dots`);
-    let moreText = document.querySelector(`.card[data-city="${city}"] .more`); 
-    let btnText = document.querySelector(`.card[data-city="${city}"] .myBtn`);
-
-    if (dots.style.display === "none") {
-        dots.style.display = "inline";
-        btnText.textContent = "Read more";
-        moreText.style.display = "none";
-    } else {
-        dots.style.display = "none";
-        btnText.textContent = "Read less"; 
-        moreText.style.display = "inline";
-    }
-}
     </head>  
     <body>
         <h1>Yu-Wei Fan</h1>
@@ -52,24 +37,6 @@ function readMore(city) {
 
             </li>
         </ul>
-
-<div class="card" data-city="buda">
-    <p>
-        Test
-        <span class="dots">...</span>
-        <span class="more" style="display: none;">Test</span>
-    </p>
-    <button onclick="readMore('buda')" class="myBtn">Read more</button>
-</div>
-<br>
-<div class="card" data-city="barca">
-    <p>
-        Test
-        <span class="dots">...</span>
-        <span class="more" style="display: none;">test</span>
-    </p>
-    <button onclick="readMore('barca')" class="myBtn">Read more</button>
-</div>
         
         <hr>
         
