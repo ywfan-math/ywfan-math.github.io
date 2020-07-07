@@ -16,6 +16,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Yu-Wei Fan</title>
         <link rel="icon" href="favicon.jpg">
+        
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+        
     </head>  
     <body>
         <h1>Yu-Wei Fan</h1>
@@ -33,10 +45,9 @@
         I am a mathematician studying algebraic geometry, particularly:
         <ul>
             <li>
-                <button onclick="myFunction()">Test button</button>
-                <div id="myDIV">
-                    Test
-                </div>
+                <p>Test</p>
+                <button id="hide">Hide</button>
+                <button id="show">Show</button>
             </li>
         </ul>
         
