@@ -57,7 +57,7 @@ button:active {
 
 a:link, 
 a:visited {
-  color: #777;
+  color: #055735;
   text-decoration: none;
 }
 
@@ -70,7 +70,7 @@ a:hover {
 .current:link, 
 .current:visited,
 .current:hover {
-  color: #222;
+  color: #055735;
   text-decoration: underline;
 }
 
