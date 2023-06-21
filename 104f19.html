@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Yu-Wei Fan | Math 104</title>
+    </head>  
+    <body>
+        <h1>Math 104 (Section 4): Introduction to Analysis, Fall 2019</h1>
+        
+       
+        
+        <hr>
+        
+        <h3>Announcement</h3>
+        <ul>
+
+            <li>
+                The
+                <a href="https://ywfan-math.github.io/104f19_syllabus.pdf">syllabus</a>.
+                Please read it carefully!
+            </li>
+            
+            <li>
+                <a href="https://dsp.berkeley.edu">DSP</a>
+                students should speak to the instructor as soon as possible, even if you do not have a letter yet.
+            </li>
+            
+            <li>
+                <a href="https://teaching.berkeley.edu/checklist-scheduling-conflicts-academic-requirements/#students">Guildlines</a>
+                on what to do if you think you may have a conflict between this class and your extracurricular activities.
+                In particular, you must speak to the instructor before the end of the second week of classes.
+            </li>
+            
+            <li>
+                Submit anonymous comments/concerns/feedback/suggestions to me
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPX9ZJHMjF50mvzCRcgbtPk1xkFw4LWKCfkwtqelmR4Lznvw/viewform?usp=sf_link">here</a>.
+            </li>
+            
+        </ul>
+
+        <hr>
+        
+        <h3>Course Information</h3>
+        
+        <b>Topics:</b> The real number system. Sequences, limits, and continuous functions in R.
+        The concept of a metric space. Uniform convergence, interchange of limit operations. Infinite series.
+        Mean value theorem and applications. The Riemann integral.
+        <br><br>
+        
+        <b>Grading:</b> Homework 20%, First Midterm 20%, Second Midterm 20%, Final 40%.<br>
+        <b>There will be no makeup exams.</b> However,
+        the lowest score of the two midterms will be replaced by the final exam score if this increases
+        your total score. So you can miss one midterm without too much damage.
+        On the other hand, missing both midterms or missing the final will seriously harm your grade.
+        <b>Please check the dates now to make sure that you have no unavoidable conflicts!</b>
+        (Check the final exam schedule
+        <a href="https://registrar.berkeley.edu/scheduling/academic-scheduling/final-exam-guide-schedules">here</a>.)
+        <br><br>
+        
+        <b>Contact Info:</b>
+        <ul>
+            <li>
+                Yu-Wei Fan (Instructor) ywfan at berkeley dot edu 
+            </li>
+            <li>
+                Nima Moini (GSI) nima at berkeley dot edu
+            </li>
+        </ul>
+        
+        <hr>
+        
+        <h3>Course Events</h3>
+        
+        <b>Lecture:</b> Tu/Th 8-9:30 at 247 Cory
+        <br><br>
+        
+        <b>Office Hours: (draft: subject to change)</b>
+        <ul>
+            <li>Monday: (Nima) 8-12 at 1010 Evans
+            </li>
+            <li>Tuesday: (Nima) 9-12 at 1010 Evans, (Yu-Wei) 2:30-4 at 735 Evans
+            </li>
+            <li>Wednesday: (Nima) 9-11 at 1010 Evans, (Yu-Wei) 5:15-6:45 at 735 Evans
+            </li>
+
+        </ul>
+        Or by appointment (email me).
+        <br><br>
+        
+        <b>Exam Dates:</b>
+        <ul>
+            <li>First Midterm: October 1, in class
+            </li>
+            <li>Second Midterm: November 5, in class
+            </li>
+            <li>Final: December 18, 3-6pm
+            </li>
+        </ul>
+        
+        <hr>
+        
+        <h3>Course Materials</h3>
+        <ul>
+            <li><b>Textbook:</b> Ross, <i>Elementary Analysis: The Theory of Calculus</i> (Second Edition).
+                You can download a copy of this book
+                <a href="https://link.springer.com/book/10.1007/978-1-4614-6271-2">here</a>.
+            </li>
+            
+            <li>
+                <b>First Midterm:</b>
+                <a href="https://ywfan-math.github.io/104f19_midterm1.pdf">Problems</a>,
+                <a href="https://ywfan-math.github.io/104f19_midterm1_sol.pdf">solutions</a>,
+                and
+                <a href="https://ywfan-math.github.io/104f19_midterm1_grading.pdf">grading scheme</a>;
+                <a href="https://ywfan-math.github.io/104f19_midterm1_practice.pdf">Practice exam</a>
+                and
+                <a href="https://ywfan-math.github.io/104f19_midterm1_practice_sol.pdf">solutions</a>;
+                <a href="https://ywfan-math.github.io/104f19_midterm1_review.pdf">Review</a>;
+                <a href="https://ywfan-math.github.io/104f19_midterm1_hw.pdf">Solutions</a>
+                of selected homework problems.
+            </li>
+            
+            <li>
+                <b>Second Midterm:</b>
+                <a href="https://ywfan-math.github.io/104f19_midterm2.pdf">Problems</a>,
+                <a href="https://ywfan-math.github.io/104f19_midterm2_sol.pdf">solutions</a>,
+                and
+                <a href="https://ywfan-math.github.io/104f19_midterm2_grading.pdf">grading scheme</a>;
+                <a href="https://ywfan-math.github.io/104f19_midterm2_practice.pdf">Practice exam</a>
+                and
+                <a href="https://ywfan-math.github.io/104f19_midterm2_practice_sol.pdf">solutions</a>;
+                <a href="https://ywfan-math.github.io/104f19_midterm2_review.pdf">Review</a>.
+            </li>
+            
+            <li>
+                <b>Final exam:</b>
+                <a href="https://ywfan-math.github.io/104f19_final.pdf">Problems</a>
+                and
+                <a href="https://ywfan-math.github.io/104f19_final_sol.pdf">solutions</a>;
+                <a href="https://ywfan-math.github.io/104f19_final_practice.pdf">Practice exam</a>
+                and
+                <a href="https://ywfan-math.github.io/104f19_final_practice_sol.pdf">solutions</a>;
+                <a href="https://ywfan-math.github.io/104f19_final_review.pdf">Review</a>.
+            </li>
+            
+            <li>
+                <a href="https://ywfan-math.github.io/104f19_proofs.pdf">Introduction to mathematical arguments</a>
+                by Michael Hutchings, for people who are unfamiliar with mathematical proofs.
+            </li>
+            
+            <li>
+                Supplementary reading:
+                <a href="https://en.wikipedia.org/wiki/Brouwer_fixed-point_theorem">Brouwer fixed-point theorem</a>;
+                <a href="https://mat.iitm.ac.in/home/mtnair/public_html/FS-kesavan.pdf">Fourier series</a>.
+            </li>
+
+        </ul>
+        
+        <hr>
+        
+        <h3>Homework</h3>
+        
+        Homework consists of reading and problems sets. There will be reading assigned for each lecture.
+        You should come to the class having read the assigned sections of the textbook.
+        <br>
+        
+        Problem sets will be assigned weekly. Assignments will be posted no later than midnight on Tuesday
+        and will be due at the beginning of the class on the following Tuesday.
+        You have to staple your work if it is more than a page.
+        Homework will be graded based on completion.
+        The lowest homework grade will be dropped.
+        <br><br>
+        
+        <b>Late homework policy:</b> As a rule late homework will not be accepted under any circumstances.
+        If you are late to class on Tuesday, your homework is late and and will not be graded.
+        If you have a medical circumstance
+        that prevents you from turning in homework, you will need a doctor's note to receive an extension. Furthermore,
+        a note that merely says “Student visited today” is not very helpful; it’s better to have a note that says something
+        like “Student may be unable to complete assignments for the next N days.” This will help me decide what length of
+        extension is appropriate.
+        <br><br>
+        
+        <b>Collaboration:</b> You are encouraged to work together on the assignments. In your solutions, you should
+        acknowledge the students with whom you worked, and you should write your solutions on your own. For any solution
+        you submit, you should understand it well enough that you can explain it to someone else and answer questions
+        about it. If you find yourself writing down things that you can’t explain, you should go back and think more about
+        the problem. Otherwise you’re doing yourself a disservice, and you might suffer more when it comes time to take
+        the midterms/exam.
+        <br><br>
+        
+        <b>Homework Assignments:</b>
+        
+        <ul>
+            <li>Due September 3:
+                <a href="https://ywfan-math.github.io/104f19_hw01.pdf">HW1</a>,
+                Reading only
+            </li>
+            
+            <li>Due September 10: <a href="https://ywfan-math.github.io/104f19_hw02.pdf">HW2</a>
+            </li>
+            
+            <li>Due September 17: <a href="https://ywfan-math.github.io/104f19_hw03.pdf">HW3</a>
+            </li>
+            
+            <li>Due September 24: <a href="https://ywfan-math.github.io/104f19_hw04.pdf">HW4</a>
+            </li>
+            
+            <li>Due October 8: <a href="https://ywfan-math.github.io/104f19_hw05.pdf">HW5</a>,
+                Reading only; plus go over your mistakes in the first midterm (if any)
+            </li>
+            
+            <li>Due October 15: <a href="https://ywfan-math.github.io/104f19_hw06.pdf">HW6</a>
+            </li>
+            
+            <li>Due October 22: <a href="https://ywfan-math.github.io/104f19_hw07.pdf">HW7</a>
+            </li>
+            
+            <li>Due October 29: <a href="https://ywfan-math.github.io/104f19_hw08.pdf">HW8</a>
+            </li>
+            
+            <li>Due November 12: <a href="https://ywfan-math.github.io/104f19_hw09.pdf">HW9</a>, 
+                Reading only; plus go over your mistakes in the second midterm (if any)
+            </li>
+            
+            <li>Due November 19: <a href="https://ywfan-math.github.io/104f19_hw10.pdf">HW10</a>
+            </li>
+            
+            <li>Due November 26: <a href="https://ywfan-math.github.io/104f19_hw11.pdf">HW11</a>
+            </li>
+        </ul>
+        
+        <hr>
+        
+        <h3>Topic Schedule (tentative: subject to change)</h3>
+        
+        This schedule will be updated as we go along.
+        <br><br>
+        
+        <b>Week 1 (August 29):</b> Section 1-4
+        <ul>
+            <li>
+                Th. Lecture 1: Real numbers, completeness
+            </li>
+        </ul>
+        
+        <b>Week 2 (September 3 and 5):</b> Section 7-8
+        <ul>
+            <li>
+                Tu. Lecture 2: Limits of sequences, proofs
+            </li>
+            <li>
+                Th. Lecture 3: More proofs
+            </li>
+        </ul>
+        
+        <b>Week 3 (September 10 and 12):</b> Section 9-10
+        <ul>
+            <li>
+                Tu. Lecture 4: Limit theorems
+            </li>
+            <li>
+                Th. Lecture 5: Monotone sequences, limsup and liminf
+            </li>
+        </ul>
+        
+        <b>Week 4 (September 17 and 19):</b> Section 10-12
+        <ul>
+            <li>
+                Tu. Lecture 6: Cauchy sequences, subsequences
+            </li>
+            <li>
+                Th. Lecture 7: Subsequences
+            </li>
+        </ul>
+        
+        <b>Week 5 (September 24 and 26):</b> Section 13
+        <ul>
+            <li>
+                Tu. Lecture 8: Metric spaces
+            </li>
+            <li>
+                Th. Lecture 9: Review for first midterm
+            </li>
+        </ul>
+        
+        <b>Week 6 (October 1 and 3):</b> Section 14
+        <ul>
+            <li>
+                Tu. Lecture 10: <b>First Midterm</b>
+            </li>
+            <li>
+                Th. Lecture 11: Infinite series
+            </li>
+        </ul>
+        
+        <b>Week 7 (October 8 and 10):</b> Section 15
+        <ul>
+            <li>
+                Tu. Lecture 12: Tests of convergence of series
+            </li>
+            <li>
+                Th. Lecture 13: <b>Class cancelled due to power outage</b>
+            </li>
+        </ul>
+        
+        <b>Week 8 (October 15 and 17):</b> Section 17, 18
+        <ul>
+            <li>
+                Tu. Lecture 14: Continuity of functions
+            </li>
+            <li>
+                Th. Lecture 15: Properties of continuous functions
+            </li>
+        </ul>
+        
+        <b>Week 9 (October 22 and 24):</b> Section 19, 20, 23
+        <ul>
+            <li>
+                Tu. Lecture 16: Unifomrly continuous
+            </li>
+            <li>
+                Th. Lecture 17: Limit of functions, Power series
+            </li>
+        </ul>
+        
+        <b>Week 10 (October 29 and 31):</b> Section 24, 25
+        <ul>
+            <li>
+                Tu. Lecture 18: Uniform convergence
+            </li>
+            <li>
+                Th. Lecture 19: Review for second midterm
+            </li>
+        </ul>
+        
+        <b>Week 11 (November 5 and 7):</b> Section 28
+        <ul>
+            <li>
+                Tu. Lecture 20: <b>Second Midterm</b>
+            </li>
+            <li>
+                Th. Lecture 21: Differentiation
+            </li>
+        </ul>
+        
+        <b>Week 12 (November 12 and 14):</b> Section 29, 31
+        <ul>
+            <li>
+                Tu. Lecture 22: Mean value theorem
+            </li>
+            <li>
+                Th. Lecture 23: Taylor series
+            </li>
+        </ul>
+        
+        <b>Week 13 (November 19 and 21):</b> Section 32, 33, 34
+        <ul>
+            <li>
+                Tu. Lecture 24: Riemann integral
+            </li>
+            <li> 
+                Th. Lecture 25: Properties of Riemann integral, Fundamental Theorem of Calculus
+            </li>
+        </ul>
+        
+        <b>Week 14 (November 26):</b> 
+        <ul>
+            <li>
+                Tu. Lecture 26: Fourier series: uniformly convergence, Parseval's identity,
+                Riemann-Lebesgue lemma, Euler's formula
+            </li>
+        </ul>
+        
+        <b>Week 15 (December 3 and 5):</b>
+        <ul>
+            <li>
+                Tu. Lecture 27: Fourier series: convergence, isoperimetric ineqaulity
+            </li>
+            <li>
+                Th. Lecture 28: Review for Final
+            </li>
+        </ul>
+        
+
+        
+
+    </body>
+</html>
