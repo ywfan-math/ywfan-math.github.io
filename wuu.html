@@ -1,271 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>simple clicker · github single‑html game</title>
+    <title>guess who · mathematician edition</title>
     <style>
         * {
             box-sizing: border-box;
-            user-select: none;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
         }
         body {
+            background: linear-gradient(145deg, #2c3e50 0%, #1e2a36 100%);
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(145deg, #1b2b3f 0%, #223544 100%);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-            padding: 12px;
+            padding: 16px;
         }
-        .game-container {
-            background: rgba(18, 28, 40, 0.8);
-            backdrop-filter: blur(4px);
-            border-radius: 42px;
-            padding: 26px 24px 32px 24px;
-            box-shadow: 0 20px 30px -8px rgba(0,0,0,0.7), inset 0 2px 3px rgba(255,255,255,0.1);
-            border: 1px solid #4f6e8b;
-            width: min(100%, 500px);
+        .game-card {
+            max-width: 680px;
+            width: 100%;
+            background: rgba(22, 34, 48, 0.9);
+            backdrop-filter: blur(6px);
+            border-radius: 48px;
+            padding: 32px 28px 40px 28px;
+            box-shadow: 0 30px 35px -12px black, inset 0 1px 4px rgba(255,255,240,0.15);
+            border: 1px solid #5f7f9c;
+            text-align: center;
         }
         h1 {
-            text-align: center;
-            margin: 0 0 18px 0;
+            color: #f6e9d2;
             font-weight: 400;
-            font-size: 2.1rem;
-            letter-spacing: 2px;
-            color: #d4eaff;
-            text-shadow: 0 4px 8px #0a141f, 0 0 8px #3d8cbd;
-            word-break: break-word;
+            font-size: 2.5rem;
+            margin: 0 0 12px 0;
+            text-shadow: 0 4px 8px #0a121c, 0 0 6px #aaccff;
+            letter-spacing: 2.5px;
         }
-        .score-panel {
-            background: #0e1a24;
-            border-radius: 120px;
-            padding: 20px 28px;
-            margin-bottom: 32px;
+        .subhead {
+            color: #cbdaea;
+            font-size: 1.15rem;
+            margin-bottom: 28px;
+            font-style: italic;
+            border-bottom: 1px dashed #4d6f89;
+            padding-bottom: 14px;
+        }
+        /* portrait area */
+        .portrait-frame {
+            background: #17232e;
+            border-radius: 38px;
+            padding: 22px 22px 16px 22px;
+            margin-bottom: 24px;
+            border: 2px solid #6e92b0;
+            box-shadow: inset 0 0 0 2px #0a1a26, 0 14px 18px -10px black;
+        }
+        .portrait-img {
+            background: #28445a;
+            background: linear-gradient(145deg, #315d79, #193244);
+            border-radius: 28px;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #9ac2e0;
+            box-shadow: inset 0 -4px 8px #0b1a24;
+            min-height: 220px;
+        }
+        /* pure css/svg "image" – a stylised mathematician portrait */
+        .svg-portrait {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        .caption {
+            color: #bedcff;
+            margin-top: 14px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            background: #0e1f2b;
+            display: inline-block;
+            padding: 6px 24px;
+            border-radius: 40px;
+        }
+        /* question */
+        .question {
+            font-size: 1.9rem;
+            font-weight: 500;
+            color: #faf3dd;
+            margin: 30px 0 28px 0;
+            text-shadow: 0 2px 5px #030a10;
+            background: #1d3140;
+            padding: 16px 10px;
+            border-radius: 70px;
+            border: 1px solid #63839e;
+        }
+        /* options grid */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .option-btn {
+            background: #1e3445;
+            border: 3px solid #4d6c88;
+            color: #f0f2f0;
+            font-size: 1.6rem;
+            font-weight: 500;
+            padding: 20px 8px;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 8px 0 #0f1e2b, 0 6px 15px black;
+            transition: 0.07s linear;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 3px black;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            border: 1px solid #3d6682;
-            box-shadow: inset 0 5px 5px rgba(0,0,0,0.8), 0 8px 12px rgba(0, 10, 20, 0.6);
+            justify-content: center;
         }
-        .score-label {
-            color: #a5c9e5;
-            font-size: 1.5rem;
-            font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .option-btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0 #0f1e2b, 0 6px 15px black;
         }
-        .score-value {
-            background: #010e16;
-            padding: 8px 24px;
-            border-radius: 60px;
-            font-size: 2.6rem;
-            font-weight: 700;
-            color: #f0fcb6;
-            text-shadow: 0 0 12px #b3d160;
-            font-family: 'Courier New', monospace;
-            border: 1px solid #6c8daa;
-            box-shadow: inset 0 2px 5px #000000;
-            line-height: 1;
+        .option-btn.selected-correct {
+            background: #256f4a;
+            border-color: #b2ffb0;
+            box-shadow: 0 4px 0 #0a3b2a, 0 6px 15px black;
+            transform: translateY(2px);
         }
-        .click-area {
-            background: #24455b;
-            background: radial-gradient(circle at 30% 20%, #3e6f8f, #153547);
-            border-radius: 52px;
-            padding: 38px 24px;
-            margin-bottom: 36px;
-            cursor: pointer;
-            border: 3px solid #75a3c4;
-            box-shadow: 0 18px 15px -8px black, inset -2px -3px 8px #10212b, inset 3px 4px 12px #9ac7ec;
-            transition: all 0.07s ease;
-            text-align: center;
+        .option-btn.selected-wrong {
+            background: #8b3840;
+            border-color: #ffb0b0;
+            box-shadow: 0 4px 0 #4f1e24, 0 6px 15px black;
+            transform: translateY(2px);
+            text-decoration: line-through wavy #ffcaca 2px;
         }
-        .click-area:active {
-            transform: scale(0.97);
-            background: radial-gradient(circle at 30% 20%, #3e7fa3, #103341);
-            box-shadow: 0 6px 10px -3px black, inset -2px -3px 8px #0b1a23, inset 3px 4px 15px #b8defa;
-        }
-        .click-area p {
-            font-size: 2.8rem;
-            margin: 0;
-            font-weight: 500;
-            color: #f7ffe0;
-            text-shadow: 0 4px 3px #0f2838, 0 0 20px #f5ffb0;
+        .disabled-click {
             pointer-events: none;
+            opacity: 0.9;
         }
-        .click-hint {
-            font-size: 1.1rem;
-            color: #c2ddee;
-            margin-top: 10px;
-            letter-spacing: 1px;
-            font-style: italic;
-        }
-        .reset-area {
+        /* feedback & reset */
+        .feedback-area {
+            min-height: 58px;
+            font-size: 1.5rem;
+            color: #ffe7b6;
+            margin: 10px 0 25px;
+            padding: 8px;
+            background: #0a1a26b0;
+            border-radius: 60px;
             display: flex;
+            align-items: center;
             justify-content: center;
         }
         .reset-btn {
-            background: #1e3343;
-            border: 2px solid #57758f;
-            color: #d9ecff;
+            background: #2b4a61;
+            border: 2px solid #87aecb;
+            color: #fcf9ea;
             font-size: 1.8rem;
-            font-weight: 400;
-            padding: 14px 45px;
+            padding: 16px 30px;
             border-radius: 60px;
-            width: 100%;
             cursor: pointer;
+            display: inline-block;
+            width: auto;
+            min-width: 220px;
+            box-shadow: 0 8px 0 #14313f, 0 8px 18px black;
+            transition: 0.07s;
             text-transform: uppercase;
-            letter-spacing: 6px;
-            box-shadow: 0 10px 0 #0b1a24, 0 8px 18px black;
-            transition: 0.07s linear;
-            text-align: center;
-            background: linear-gradient(180deg, #264b60 0%, #17323f 100%);
+            letter-spacing: 5px;
+            font-weight: 400;
+            margin-top: 8px;
         }
         .reset-btn:active {
-            transform: translateY(6px);
-            box-shadow: 0 4px 0 #0b1a24, 0 8px 18px black;
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #14313f, 0 8px 18px black;
         }
         footer {
-            text-align: center;
-            color: #617e97;
-            margin-top: 25px;
+            color: #57758c;
+            margin-top: 32px;
             font-size: 0.9rem;
-            border-top: 1px dashed #2f4e67;
+            border-top: 1px solid #314e62;
             padding-top: 18px;
         }
         footer a {
-            color: #b0d6ff;
-            text-decoration: none;
+            color: #b3d6f5;
         }
-        footer a:hover {
-            text-decoration: underline;
+        /* focus outline for accessibility */
+        .option-btn:focus-visible, .reset-btn:focus-visible {
+            outline: 5px solid #ffcf8a;
+            outline-offset: 4px;
         }
     </style>
 </head>
 <body>
-    <div class="game-container">
-        <h1>🍪 SIMPLE CLICKER</h1>
+<div class="game-card">
+    <h1>🔍 WHO AM I ?</h1>
+    <div class="subhead">a famous mathematician</div>
 
-        <!-- score display -->
-        <div class="score-panel">
-            <span class="score-label">score</span>
-            <span class="score-value" id="scoreDisplay">0</span>
+    <!-- picture of a mathematician (SVG illustration) -->
+    <div class="portrait-frame">
+        <div class="portrait-img">
+            <svg class="svg-portrait" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="stylised portrait of a mathematician with glasses and book">
+                <!-- background glow -->
+                <rect width="240" height="200" rx="30" fill="#284b63" />
+                <!-- hair / hat (professorial) -->
+                <path d="M60 45 L180 45 L170 80 L70 80 Z" fill="#2b221c" />
+                <circle cx="120" cy="70" r="40" fill="#f9e0c0" />  <!-- face -->
+                <!-- glasses -->
+                <rect x="75" y="80" width="35" height="20" rx="10" fill="#b0c4d9" stroke="#2f3f4f" stroke-width="3" />
+                <rect x="130" y="80" width="35" height="20" rx="10" fill="#b0c4d9" stroke="#2f3f4f" stroke-width="3" />
+                <path d="M110 90 L130 90" stroke="#2f3f4f" stroke-width="4" stroke-linecap="round" />
+                <!-- eyes -->
+                <circle cx="92" cy="92" r="5" fill="#151515" />
+                <circle cx="147" cy="92" r="5" fill="#151515" />
+                <!-- moustache/beard -->
+                <path d="M100 115 Q120 130 140 115" stroke="#5f4c3b" stroke-width="10" fill="none" stroke-linecap="round" />
+                <!-- book in hand -->
+                <rect x="160" y="130" width="35" height="25" rx="4" fill="#8b6b4d" />
+                <line x1="165" y1="135" x2="190" y2="135" stroke="#efd7b6" stroke-width="2" />
+                <line x1="165" y1="142" x2="190" y2="142" stroke="#efd7b6" stroke-width="2" />
+                <!-- body / jacket -->
+                <rect x="80" y="130" width="80" height="35" rx="10" fill="#1f4b6e" />
+            </svg>
         </div>
-
-        <!-- main clickable zone -->
-        <div class="click-area" id="clickButton" role="button" tabindex="0" aria-label="click to increase score">
-            <p>✨ CLICK ✨</p>
-            <div class="click-hint">▼ tap anywhere here ▼</div>
-        </div>
-
-        <!-- reset button -->
-        <div class="reset-area">
-            <div class="reset-btn" id="resetButton" role="button" tabindex="0" aria-label="reset score to zero">
-                ↻ reset
-            </div>
-        </div>
-
-        <footer>
-            ⚡ single‑html · hosted on <a href="#" target="_blank">github</a> · click & fun
-        </footer>
+        <div class="caption">📸 portrait c. 1870 (reconstructed)</div>
     </div>
 
-    <script>
-        (function() {
-            // ----- game state -----
-            let score = 0;
+    <!-- guess prompt -->
+    <div class="question">⚡ this mathematician is ...</div>
 
-            // ----- DOM elements -----
-            const scoreElement = document.getElementById('scoreDisplay');
-            const clickArea = document.getElementById('clickButton');
-            const resetBtn = document.getElementById('resetButton');
+    <!-- option buttons (dynamic will be filled by js) -->
+    <div class="options-grid" id="optionsContainer"></div>
 
-            // helper: update the displayed score with simple animation (quick class)
-            function updateScoreDisplay(newScore) {
-                scoreElement.textContent = newScore;
-                // tiny visual feedback on the number itself
-                scoreElement.style.transition = 'transform 0.08s, color 0.08s';
-                scoreElement.style.transform = 'scale(1.2)';
-                scoreElement.style.color = '#ffffb0';
-                setTimeout(() => {
-                    scoreElement.style.transform = 'scale(1)';
-                    scoreElement.style.color = '#f0fcb6';
-                }, 90);
+    <!-- feedback & reset row -->
+    <div class="feedback-area" id="feedbackMessage">🤔 choose an option</div>
+
+    <div class="reset-btn" id="resetGameBtn" role="button" tabindex="0">↻ play again</div>
+
+    <footer>
+        🧮 single‑html · github friendly · guess the mathematician
+    </footer>
+</div>
+
+<script>
+    (function() {
+        // ---------- QUIZ DATA ----------
+        // We have 4 mathematicians, with one correct answer (Gauss)
+        const mathematicians = [
+            { name: 'Carl F. Gauss', isCorrect: true },
+            { name: 'Leonhard Euler', isCorrect: false },
+            { name: 'Ada Lovelace', isCorrect: false },
+            { name: 'Srinivasa Ramanujan', isCorrect: false }
+        ];
+
+        // current game state
+        let selectedIndex = null;          // index of clicked option (0..3)
+        let gameActive = true;              // true = not answered yet; false = after guess
+        let correctAnswerIndex = 0;          // Gauss is at index 0 (see above)
+
+        // DOM elements
+        const optionsDiv = document.getElementById('optionsContainer');
+        const feedbackEl = document.getElementById('feedbackMessage');
+        const resetBtn = document.getElementById('resetGameBtn');
+
+        // Helper: shuffle array (Fisher–Yates) for fresh order each reset, but keep track of correct one
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
             }
-
-            // increment score (max 9999 to keep it tidy, but it's not strict)
-            function handleClick() {
-                if (score < 9999) {  // avoid getting too huge, but it's just for fun
-                    score++;
-                } else {
-                    score = 9999;      // cap at 9999, but you can still click – stays at 9999
-                }
-                updateScoreDisplay(score);
-            }
-
-            // reset score to zero
-            function handleReset() {
-                score = 0;
-                updateScoreDisplay(score);
-                // additional small feedback on reset button
-                resetBtn.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    resetBtn.style.transform = 'scale(1)';
-                }, 90);
-            }
-
-            // ----- event listeners -----
-            clickArea.addEventListener('click', (e) => {
-                e.stopPropagation();  // just good practice
-                handleClick();
-            });
-
-            // keyboard accessibility: pressing Enter or Space on the click area
-            clickArea.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();  // prevent page scroll on space
-                    handleClick();
-                }
-            });
-
-            // reset button click
-            resetBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                handleReset();
-            });
-
-            // keyboard for reset button
-            resetBtn.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleReset();
-                }
-            });
-
-            // make sure divs are focusable (already have tabindex)
-            // optional: add a small ripple effect when clicked anywhere (just for polish)
-            clickArea.addEventListener('mousedown', () => {
-                clickArea.style.transform = 'scale(0.97)';
-            });
-            clickArea.addEventListener('mouseup', () => {
-                clickArea.style.transform = 'scale(1)';
-            });
-            clickArea.addEventListener('mouseleave', () => {
-                clickArea.style.transform = 'scale(1)';
-            });
-
-            // initialize display
-            updateScoreDisplay(0);
-        })();
-    </script>
-
-    <!-- tiny extra style to show focus for accessibility -->
-    <style>
-        .click-area:focus-visible, .reset-btn:focus-visible {
-            outline: 4px solid #f6c978;
-            outline-offset: 4px;
+            return arr;
         }
-    </style>
+
+        // rebuilds options in random order, preserves correct index
+        function buildOptions() {
+            // make a copy of mathematicians and shuffle
+            const shuffled = shuffleArray([...mathematicians]);
+            // find new correct index (where isCorrect == true)
+            const newCorrectIdx = shuffled.findIndex(m => m.isCorrect === true);
+
+            // store in data attribute if needed, but we'll keep correctAnswerIndex updated
+            correctAnswerIndex = newCorrectIdx;   // update global correct index for this shuffled order
+
+            // clear container
+            optionsDiv.innerHTML = '';
+
+            // create button for each mathematician
+            shuffled.forEach((mat, idx) => {
+                const btn = document.createElement('div');
+                btn.className = 'option-btn';
+                btn.setAttribute('role', 'button');
+                btn.setAttribute('tabindex', '0');
+                btn.dataset.index = idx;           // store current position
+                btn.textContent = mat.name;
+
+                // attach click listener
+                btn.addEventListener('click', optionClickHandler);
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        optionClickHandler.call(btn, e);
+                    }
+                });
+
+                optionsDiv.appendChild(btn);
+            });
+
+            // reset selection and gameActive
+            selectedIndex = null;
+            gameActive = true;
+            // remove any leftover 'selected' classes & re-enable clicks
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('selected-correct', 'selected-wrong');
+            });
+            // enable pointer (remove disabled class from container)
+            optionsDiv.classList.remove('disabled-click');
+            feedbackEl.textContent = '🤔 choose an option';
+        }
+
+        // click handler for option buttons
+        function optionClickHandler(event) {
+            const btn = event.currentTarget;
+            // if game not active (already answered) ignore
+            if (!gameActive) return;
+
+            const idx = parseInt(btn.dataset.index, 10);   // index in current shuffled list
+
+            // if an option was already selected? we prevent double answer (but we can ignore or disable)
+            // simpler: if we already have selectedIndex !== null, do nothing (they can't change)
+            if (selectedIndex !== null) return;
+
+            // mark this button as selected
+            selectedIndex = idx;
+
+            // determine correct / wrong
+            const isCorrect = (idx === correctAnswerIndex);
+
+            // add appropriate class to all buttons? we style only the clicked one, but also show correct one?
+            // but we want to reveal: highlight correct in green, wrong picks in red.
+            // better: show user which one was correct and mark his choice accordingly.
+            // we'll loop through all buttons:
+            const allBtns = document.querySelectorAll('.option-btn');
+            allBtns.forEach((button, i) => {
+                if (i === correctAnswerIndex) {
+                    button.classList.add('selected-correct');   // correct answer gets green
+                } else if (i === idx && i !== correctAnswerIndex) {
+                    button.classList.add('selected-wrong');      // player's wrong pick gets red
+                }
+                // if the player picked correctly, his button is already the correct index (green)
+                if (i === idx && i === correctAnswerIndex) {
+                    button.classList.add('selected-correct');    // already green, fine.
+                }
+            });
+
+            // disable further clicks
+            optionsDiv.classList.add('disabled-click');
+            gameActive = false;
+
+            // feedback message
+            if (isCorrect) {
+                feedbackEl.innerHTML = '✅ CORRECT! Well done.';
+            } else {
+                const correctName = allBtns[correctAnswerIndex]?.textContent || 'Gauss';
+                feedbackEl.innerHTML = `❌ Nope ... it was ${correctName}.`;
+            }
+        }
+
+        // reset everything (shuffle again, rebuild UI)
+        function resetGame() {
+            buildOptions();    // this already reshuffles and resets state
+        }
+
+        // initial build
+        buildOptions();
+
+        // reset button listener
+        resetBtn.addEventListener('click', () => {
+            resetGame();
+        });
+        resetBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                resetGame();
+            }
+        });
+
+        // (optional) some extra flair: pressing the same reset with space/enter works
+    })();
+</script>
 </body>
 </html>
