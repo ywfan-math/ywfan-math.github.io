@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head >
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>guess who · mathematician edition</title>
+    <title>Mathematician portrait quiz · who am i?</title>
     <style>
         * {
             box-sizing: border-box;
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
         }
         body {
-            background: linear-gradient(145deg, #2c3e50 0%, #1e2a36 100%);
+            background: linear-gradient(145deg, #1f2e3f 0%, #17222d 100%);
             min-height: 100vh;
             margin: 0;
             display: flex;
@@ -18,83 +18,106 @@
             align-items: center;
             padding: 16px;
         }
-        .game-card {
-            max-width: 680px;
+        .quiz-container {
+            max-width: 750px;
             width: 100%;
-            background: rgba(22, 34, 48, 0.9);
-            backdrop-filter: blur(6px);
+            background: rgba(20, 32, 45, 0.9);
+            backdrop-filter: blur(8px);
             border-radius: 48px;
-            padding: 32px 28px 40px 28px;
-            box-shadow: 0 30px 35px -12px black, inset 0 1px 4px rgba(255,255,240,0.15);
-            border: 1px solid #5f7f9c;
-            text-align: center;
+            padding: 28px 24px 36px 24px;
+            box-shadow: 0 30px 35px -12px black, inset 0 1px 4px rgba(255,255,240,0.1);
+            border: 1px solid #527a9b;
         }
         h1 {
-            color: #f6e9d2;
+            color: #f2e3cf;
             font-weight: 400;
-            font-size: 2.5rem;
-            margin: 0 0 12px 0;
-            text-shadow: 0 4px 8px #0a121c, 0 0 6px #aaccff;
-            letter-spacing: 2.5px;
+            font-size: 2.3rem;
+            margin: 0 0 10px 0;
+            text-shadow: 0 4px 8px #0a111c, 0 0 6px #b3d6ff;
+            letter-spacing: 2px;
+            text-align: center;
         }
         .subhead {
-            color: #cbdaea;
-            font-size: 1.15rem;
+            color: #b9d1e7;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px dashed #3e5f78;
+            padding-bottom: 12px;
+        }
+        /* progress tracker */
+        .progress {
+            display: flex;
+            justify-content: space-between;
+            background: #10222e;
+            border-radius: 60px;
+            padding: 10px 16px;
             margin-bottom: 28px;
-            font-style: italic;
-            border-bottom: 1px dashed #4d6f89;
-            padding-bottom: 14px;
+            color: #bcd1e3;
+            border: 1px solid #3b637d;
+            font-size: 1.2rem;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        /* portrait area */
-        .portrait-frame {
-            background: #17232e;
+        .question-num {
+            background: #1a3445;
+            padding: 6px 22px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        .score {
+            background: #1e3f4e;
+            padding: 6px 22px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        /* portrait image area */
+        .portrait-card {
+            background: #0f212f;
             border-radius: 38px;
-            padding: 22px 22px 16px 22px;
+            padding: 20px;
             margin-bottom: 24px;
-            border: 2px solid #6e92b0;
-            box-shadow: inset 0 0 0 2px #0a1a26, 0 14px 18px -10px black;
+            border: 2px solid #668bad;
+            box-shadow: inset 0 0 0 2px #08212e, 0 12px 18px -10px black;
         }
-        .portrait-img {
-            background: #28445a;
-            background: linear-gradient(145deg, #315d79, #193244);
+        .image-wrapper {
+            background: #1c364a;
             border-radius: 28px;
-            padding: 30px 20px;
+            padding: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid #9ac2e0;
-            box-shadow: inset 0 -4px 8px #0b1a24;
-            min-height: 220px;
+            border: 1px solid #8bb3d1;
+            min-height: 240px;
         }
-        /* pure css/svg "image" – a stylised mathematician portrait */
-        .svg-portrait {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
+        .math-portrait {
+            max-width: 100%;
+            max-height: 260px;
+            border-radius: 18px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.6);
+            border: 2px solid #cdddee;
+            object-fit: cover;
+            background: #e5e5e5;
         }
-        .caption {
-            color: #bedcff;
-            margin-top: 14px;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            background: #0e1f2b;
-            display: inline-block;
-            padding: 6px 24px;
-            border-radius: 40px;
+        .portrait-caption {
+            color: #b8d1e9;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            text-align: center;
+            font-style: italic;
         }
-        /* question */
-        .question {
-            font-size: 1.9rem;
+        /* question & options */
+        .question-text {
+            font-size: 2rem;
             font-weight: 500;
-            color: #faf3dd;
-            margin: 30px 0 28px 0;
-            text-shadow: 0 2px 5px #030a10;
-            background: #1d3140;
-            padding: 16px 10px;
-            border-radius: 70px;
-            border: 1px solid #63839e;
+            color: #fcf3de;
+            text-align: center;
+            margin: 20px 0 28px 0;
+            background: #1b3142;
+            padding: 12px 8px;
+            border-radius: 60px;
+            border: 1px solid #64839e;
         }
-        /* options grid */
         .options-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -102,168 +125,230 @@
             margin-bottom: 30px;
         }
         .option-btn {
-            background: #1e3445;
-            border: 3px solid #4d6c88;
+            background: #1e3345;
+            border: 3px solid #3b607b;
             color: #f0f2f0;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 500;
-            padding: 20px 8px;
+            padding: 18px 6px;
             border-radius: 60px;
             cursor: pointer;
-            box-shadow: 0 8px 0 #0f1e2b, 0 6px 15px black;
-            transition: 0.07s linear;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-shadow: 0 2px 3px black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 7px 0 #0f1f2c, 0 6px 14px black;
+            transition: 0.06s linear;
+            text-align: center;
+            line-height: 1.2;
+            word-break: break-word;
         }
         .option-btn:active {
-            transform: translateY(6px);
-            box-shadow: 0 2px 0 #0f1e2b, 0 6px 15px black;
+            transform: translateY(5px);
+            box-shadow: 0 2px 0 #0f1f2c, 0 6px 14px black;
         }
-        .option-btn.selected-correct {
-            background: #256f4a;
-            border-color: #b2ffb0;
-            box-shadow: 0 4px 0 #0a3b2a, 0 6px 15px black;
-            transform: translateY(2px);
+        .option-btn.correct-highlight {
+            background: #1f6a4a;
+            border-color: #bafab6;
+            box-shadow: 0 4px 0 #0b3726, 0 6px 14px black;
+            transform: translateY(3px);
         }
-        .option-btn.selected-wrong {
-            background: #8b3840;
-            border-color: #ffb0b0;
-            box-shadow: 0 4px 0 #4f1e24, 0 6px 15px black;
-            transform: translateY(2px);
-            text-decoration: line-through wavy #ffcaca 2px;
+        .option-btn.wrong-highlight {
+            background: #96404a;
+            border-color: #ffb5b5;
+            box-shadow: 0 4px 0 #502129, 0 6px 14px black;
+            transform: translateY(3px);
+            text-decoration: line-through wavy #f9c1c1 2px;
         }
-        .disabled-click {
+        .disabled-options {
             pointer-events: none;
             opacity: 0.9;
         }
-        /* feedback & reset */
+        /* feedback & next button */
         .feedback-area {
-            min-height: 58px;
-            font-size: 1.5rem;
-            color: #ffe7b6;
-            margin: 10px 0 25px;
-            padding: 8px;
-            background: #0a1a26b0;
+            min-height: 60px;
+            font-size: 1.6rem;
+            color: #ffeab3;
+            background: #0a1d2b;
             border-radius: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 10px 0 20px;
+            padding: 12px 18px;
+            border: 1px solid #5f819c;
+        }
+        .next-btn {
+            background: #325d78;
+            border: 2px solid #8eb6d4;
+            color: #fcf9ea;
+            font-size: 2rem;
+            padding: 14px 30px;
+            border-radius: 60px;
+            cursor: pointer;
+            display: inline-block;
+            width: auto;
+            min-width: 240px;
+            box-shadow: 0 8px 0 #1a384b, 0 8px 18px black;
+            transition: 0.06s;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 400;
+            margin: 8px auto 0;
+            border: none;
+        }
+        .next-btn:active {
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #1a384b, 0 8px 18px black;
+        }
+        .next-btn:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            filter: grayscale(0.5);
         }
         .reset-btn {
             background: #2b4a61;
             border: 2px solid #87aecb;
             color: #fcf9ea;
-            font-size: 1.8rem;
-            padding: 16px 30px;
+            font-size: 1.5rem;
+            padding: 12px 30px;
             border-radius: 60px;
             cursor: pointer;
             display: inline-block;
             width: auto;
-            min-width: 220px;
-            box-shadow: 0 8px 0 #14313f, 0 8px 18px black;
-            transition: 0.07s;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-weight: 400;
-            margin-top: 8px;
+            min-width: 180px;
+            box-shadow: 0 6px 0 #14313f, 0 8px 18px black;
+            transition: 0.06s;
+            margin-left: 20px;
         }
         .reset-btn:active {
-            transform: translateY(5px);
-            box-shadow: 0 3px 0 #14313f, 0 8px 18px black;
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #14313f, 0 8px 18px black;
+        }
+        .action-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         footer {
             color: #57758c;
             margin-top: 32px;
-            font-size: 0.9rem;
-            border-top: 1px solid #314e62;
-            padding-top: 18px;
+            font-size: 0.8rem;
+            text-align: center;
+            border-top: 1px solid #2e4e64;
+            padding-top: 20px;
         }
-        footer a {
-            color: #b3d6f5;
+        .attribution {
+            font-size: 0.7rem;
+            color: #6e8da5;
         }
-        /* focus outline for accessibility */
-        .option-btn:focus-visible, .reset-btn:focus-visible {
+        /* focus outline */
+        .option-btn:focus-visible, .next-btn:focus-visible, .reset-btn:focus-visible {
             outline: 5px solid #ffcf8a;
             outline-offset: 4px;
         }
     </style>
 </head>
 <body>
-<div class="game-card">
-    <h1>🔍 WHO AM I ?</h1>
-    <div class="subhead">a famous mathematician</div>
+<div class="quiz-container">
+    <h1>📸 WHO AM I ?</h1>
+    <div class="subhead">famous mathematicians – real portraits</div>
 
-    <!-- picture of a mathematician (SVG illustration) -->
-    <div class="portrait-frame">
-        <div class="portrait-img">
-            <svg class="svg-portrait" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="stylised portrait of a mathematician with glasses and book">
-                <!-- background glow -->
-                <rect width="240" height="200" rx="30" fill="#284b63" />
-                <!-- hair / hat (professorial) -->
-                <path d="M60 45 L180 45 L170 80 L70 80 Z" fill="#2b221c" />
-                <circle cx="120" cy="70" r="40" fill="#f9e0c0" />  <!-- face -->
-                <!-- glasses -->
-                <rect x="75" y="80" width="35" height="20" rx="10" fill="#b0c4d9" stroke="#2f3f4f" stroke-width="3" />
-                <rect x="130" y="80" width="35" height="20" rx="10" fill="#b0c4d9" stroke="#2f3f4f" stroke-width="3" />
-                <path d="M110 90 L130 90" stroke="#2f3f4f" stroke-width="4" stroke-linecap="round" />
-                <!-- eyes -->
-                <circle cx="92" cy="92" r="5" fill="#151515" />
-                <circle cx="147" cy="92" r="5" fill="#151515" />
-                <!-- moustache/beard -->
-                <path d="M100 115 Q120 130 140 115" stroke="#5f4c3b" stroke-width="10" fill="none" stroke-linecap="round" />
-                <!-- book in hand -->
-                <rect x="160" y="130" width="35" height="25" rx="4" fill="#8b6b4d" />
-                <line x1="165" y1="135" x2="190" y2="135" stroke="#efd7b6" stroke-width="2" />
-                <line x1="165" y1="142" x2="190" y2="142" stroke="#efd7b6" stroke-width="2" />
-                <!-- body / jacket -->
-                <rect x="80" y="130" width="80" height="35" rx="10" fill="#1f4b6e" />
-            </svg>
-        </div>
-        <div class="caption">📸 portrait c. 1870 (reconstructed)</div>
+    <!-- progress bar -->
+    <div class="progress">
+        <span class="question-num" id="questionCounter">Q1 / 6</span>
+        <span class="score" id="scoreDisplay">✅ 0</span>
     </div>
 
-    <!-- guess prompt -->
-    <div class="question">⚡ this mathematician is ...</div>
+    <!-- image area (actual photos/paintings) -->
+    <div class="portrait-card">
+        <div class="image-wrapper" id="portraitWrapper">
+            <img class="math-portrait" id="mathPortrait" src="https://via.placeholder.com/400x260/1e3f5a/white?text=Loading+portrait..." alt="mathematician portrait">
+        </div>
+        <div class="portrait-caption" id="imageCredit"></div>
+    </div>
 
-    <!-- option buttons (dynamic will be filled by js) -->
+    <!-- question -->
+    <div class="question-text">⚡ this mathematician is ...</div>
+
+    <!-- options (4 buttons) -->
     <div class="options-grid" id="optionsContainer"></div>
 
-    <!-- feedback & reset row -->
-    <div class="feedback-area" id="feedbackMessage">🤔 choose an option</div>
+    <!-- feedback & next/reset -->
+    <div class="feedback-area" id="feedbackMessage">choose an option</div>
 
-    <div class="reset-btn" id="resetGameBtn" role="button" tabindex="0">↻ play again</div>
+    <div class="action-row">
+        <div class="next-btn" id="nextQuestionBtn" tabindex="0" role="button">➡️ next</div>
+        <div class="reset-btn" id="resetGameBtn" tabindex="0" role="button">↻ restart</div>
+    </div>
 
     <footer>
-        🧮 single‑html · github friendly · guess the mathematician
+        <span class="attribution">images: public domain / library of congress, smithsonian, npg, nasa [citation 2,3,6,7,10]</span><br>
+        single‑html · github friendly · mathematician quiz
     </footer>
 </div>
 
 <script>
     (function() {
-        // ---------- QUIZ DATA ----------
-        // We have 4 mathematicians, with one correct answer (Gauss)
-        const mathematicians = [
-            { name: 'Carl F. Gauss', isCorrect: true },
-            { name: 'Leonhard Euler', isCorrect: false },
-            { name: 'Ada Lovelace', isCorrect: false },
-            { name: 'Srinivasa Ramanujan', isCorrect: false }
+        // ---------- QUIZ DATA: mathematicians with actual image URLs ----------
+        // each object: name, imageUrl, credit (caption), and an array of 4 possible names (including correct)
+        // for simplicity, the correct one is always at index 0 in the options array, but we shuffle later.
+        const questions = [
+            { 
+                correct: "Leonhard Euler",
+                image: "https://library.si.edu/sites/default/files/styles/media_gallery_landscape/public/images/people/portrait-of-leonhard-euler-73013.jpg?itok=2V-h3x5G", 
+                credit: "Engraving by Dupin, Smithsonian Libraries [citation:10]",
+                options: ["Leonhard Euler", "Carl Gauss", "Joseph Lagrange", "Daniel Bernoulli"]
+            },
+            {
+                correct: "Ada Lovelace",
+                image: "https://www.npg.org.uk/media/2390880/Ada-Lovelace-by-Margaret-Sarah-Carpener-1836-Promo.jpg", 
+                credit: "Margaret Sarah Carpenter, 1836 · National Portrait Gallery, London [citation:3]",
+                options: ["Ada Lovelace", "Mary Somerville", "Florence Nightingale", "Sophie Germain"]
+            },
+            {
+                correct: "Bernhard Riemann",
+                image: "https://tile.loc.gov/storage-services/service/pnp/cph/3c20000/3c20000/3c20300/3c20354_150px.jpg", 
+                credit: "Library of Congress, halftone ca.1901 [citation:6]",
+                options: ["Bernhard Riemann", "Augustin Cauchy", "Karl Weierstrass", "David Hilbert"]
+            },
+            {
+                correct: "Katherine Johnson",
+                image: "https://media.gettyimages.com/id/627024538/photo/nasa-space-scientist-and-mathematician-katherine-johnson-poses-for-a-portrait-at-her-desk.jpg?s=612x612&w=0&k=20&c=6L-fnzYyRwEoOOHvxRTgZCs7NhRucPzXYoRreZkek0A=", 
+                credit: "NASA / Donaldson Collection / Getty Images [citation:7]",
+                options: ["Katherine Johnson", "Dorothy Vaughan", "Mary Jackson", "Margaret Hamilton"]
+            },
+            {
+                correct: "Srinivasa Ramanujan",
+                image: "https://mathshistory.st-andrews.ac.uk/Biographies/Ramanujan/ramanujan_3.jpeg", 
+                credit: "MacTutor History of Mathematics, public domain [citation:4]",
+                options: ["Srinivasa Ramanujan", "J. C. Bose", "C. V. Raman", "H. J. Bhabha"]
+            },
+            {
+                correct: "Hypatia",
+                image: "https://www.mediastorehouse.com.au/f/582/583/1911_/portrait-hypatia-alexandria-370-415-mathematician-philosopher.jpg", 
+                credit: "after A. Seifert, private collection [citation:5]",
+                options: ["Hypatia", "Theano", "Agnese of Rome", "Arete of Cyrene"]
+            }
         ];
 
-        // current game state
-        let selectedIndex = null;          // index of clicked option (0..3)
-        let gameActive = true;              // true = not answered yet; false = after guess
-        let correctAnswerIndex = 0;          // Gauss is at index 0 (see above)
+        // ---------- game state ----------
+        let currentQuestionIndex = 0;          // 0..5
+        let score = 0;
+        let selectedIdx = null;                // index of clicked option in current question
+        let gameActive = true;                  // true if not yet answered
+        let correctAnswerIndex = 0;              // will be set per question after shuffle
+        let currentShuffledOptions = [];         // store shuffled names for current question
 
         // DOM elements
+        const imgElement = document.getElementById('mathPortrait');
+        const imgCredit = document.getElementById('imageCredit');
+        const qCounter = document.getElementById('questionCounter');
+        const scoreSpan = document.getElementById('scoreDisplay');
         const optionsDiv = document.getElementById('optionsContainer');
         const feedbackEl = document.getElementById('feedbackMessage');
+        const nextBtn = document.getElementById('nextQuestionBtn');
         const resetBtn = document.getElementById('resetGameBtn');
 
-        // Helper: shuffle array (Fisher–Yates) for fresh order each reset, but keep track of correct one
+        // ---------- helper: shuffle array (Fisher-Yates) ----------
         function shuffleArray(arr) {
             for (let i = arr.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -272,29 +357,29 @@
             return arr;
         }
 
-        // rebuilds options in random order, preserves correct index
-        function buildOptions() {
-            // make a copy of mathematicians and shuffle
-            const shuffled = shuffleArray([...mathematicians]);
-            // find new correct index (where isCorrect == true)
-            const newCorrectIdx = shuffled.findIndex(m => m.isCorrect === true);
+        // ---------- load current question (index) and update UI ----------
+        function loadQuestion(index) {
+            const q = questions[index];
+            // set image & credit
+            imgElement.src = q.image;
+            imgElement.alt = `portrait of ${q.correct}`;
+            imgCredit.textContent = q.credit;
 
-            // store in data attribute if needed, but we'll keep correctAnswerIndex updated
-            correctAnswerIndex = newCorrectIdx;   // update global correct index for this shuffled order
+            // shuffle options for this question
+            const optsCopy = [...q.options];
+            currentShuffledOptions = shuffleArray(optsCopy);
+            // find where the correct name ended up
+            correctAnswerIndex = currentShuffledOptions.findIndex(name => name === q.correct);
 
-            // clear container
+            // clear options container & rebuild buttons
             optionsDiv.innerHTML = '';
-
-            // create button for each mathematician
-            shuffled.forEach((mat, idx) => {
+            currentShuffledOptions.forEach((name, idx) => {
                 const btn = document.createElement('div');
                 btn.className = 'option-btn';
                 btn.setAttribute('role', 'button');
                 btn.setAttribute('tabindex', '0');
-                btn.dataset.index = idx;           // store current position
-                btn.textContent = mat.name;
-
-                // attach click listener
+                btn.dataset.index = idx;
+                btn.textContent = name;
                 btn.addEventListener('click', optionClickHandler);
                 btn.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -302,90 +387,131 @@
                         optionClickHandler.call(btn, e);
                     }
                 });
-
                 optionsDiv.appendChild(btn);
             });
 
-            // reset selection and gameActive
-            selectedIndex = null;
+            // reset selection state for new question
+            selectedIdx = null;
             gameActive = true;
-            // remove any leftover 'selected' classes & re-enable clicks
+            // remove any extra classes & re-enable clicks
             document.querySelectorAll('.option-btn').forEach(btn => {
-                btn.classList.remove('selected-correct', 'selected-wrong');
+                btn.classList.remove('correct-highlight', 'wrong-highlight');
             });
-            // enable pointer (remove disabled class from container)
-            optionsDiv.classList.remove('disabled-click');
+            optionsDiv.classList.remove('disabled-options');
             feedbackEl.textContent = '🤔 choose an option';
+
+            // update question counter
+            qCounter.textContent = `Q${index+1} / ${questions.length}`;
         }
 
-        // click handler for option buttons
+        // ---------- update score display ----------
+        function updateScoreUI() {
+            scoreSpan.textContent = `✅ ${score}`;
+        }
+
+        // ---------- option click handler ----------
         function optionClickHandler(event) {
+            if (!gameActive) return;               // already answered
             const btn = event.currentTarget;
-            // if game not active (already answered) ignore
-            if (!gameActive) return;
+            const idx = parseInt(btn.dataset.index, 10);
+            if (selectedIdx !== null) return;      // already selected an option (double click prevention)
 
-            const idx = parseInt(btn.dataset.index, 10);   // index in current shuffled list
+            selectedIdx = idx;
+            gameActive = false;
 
-            // if an option was already selected? we prevent double answer (but we can ignore or disable)
-            // simpler: if we already have selectedIndex !== null, do nothing (they can't change)
-            if (selectedIndex !== null) return;
-
-            // mark this button as selected
-            selectedIndex = idx;
-
-            // determine correct / wrong
+            // determine correct/incorrect
             const isCorrect = (idx === correctAnswerIndex);
+            if (isCorrect) {
+                score++;
+                updateScoreUI();
+            }
 
-            // add appropriate class to all buttons? we style only the clicked one, but also show correct one?
-            // but we want to reveal: highlight correct in green, wrong picks in red.
-            // better: show user which one was correct and mark his choice accordingly.
-            // we'll loop through all buttons:
+            // apply classes to all options: highlight correct green, and if wrong mark selected as red
             const allBtns = document.querySelectorAll('.option-btn');
             allBtns.forEach((button, i) => {
                 if (i === correctAnswerIndex) {
-                    button.classList.add('selected-correct');   // correct answer gets green
+                    button.classList.add('correct-highlight');
                 } else if (i === idx && i !== correctAnswerIndex) {
-                    button.classList.add('selected-wrong');      // player's wrong pick gets red
+                    button.classList.add('wrong-highlight');
                 }
-                // if the player picked correctly, his button is already the correct index (green)
-                if (i === idx && i === correctAnswerIndex) {
-                    button.classList.add('selected-correct');    // already green, fine.
-                }
+                // if correct and selected same, already covered by correct-highlight
             });
 
-            // disable further clicks
-            optionsDiv.classList.add('disabled-click');
-            gameActive = false;
+            optionsDiv.classList.add('disabled-options');
 
             // feedback message
             if (isCorrect) {
                 feedbackEl.innerHTML = '✅ CORRECT! Well done.';
             } else {
-                const correctName = allBtns[correctAnswerIndex]?.textContent || 'Gauss';
-                feedbackEl.innerHTML = `❌ Nope ... it was ${correctName}.`;
+                const correctName = currentShuffledOptions[correctAnswerIndex];
+                feedbackEl.innerHTML = `❌ No, it was ${correctName}.`;
             }
         }
 
-        // reset everything (shuffle again, rebuild UI)
-        function resetGame() {
-            buildOptions();    // this already reshuffles and resets state
+        // ---------- move to next question ----------
+        function goToNext() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion(currentQuestionIndex);
+            } else {
+                // end of quiz
+                feedbackEl.innerHTML = '🎉 QUIZ COMPLETE! click restart to play again.';
+                optionsDiv.classList.add('disabled-options');
+                // disable next button maybe
+                nextBtn.style.opacity = '0.4';
+                nextBtn.style.pointerEvents = 'none';
+            }
         }
 
-        // initial build
-        buildOptions();
+        // ---------- restart entire quiz ----------
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            updateScoreUI();
+            // re-enable next button if disabled
+            nextBtn.style.opacity = '1';
+            nextBtn.style.pointerEvents = 'auto';
+            loadQuestion(0);    // start fresh
+        }
 
-        // reset button listener
+        // ---------- event listeners for next and reset ----------
+        nextBtn.addEventListener('click', () => {
+            // only allow if game is not active? but you can always move if not at end. But check end.
+            if (currentQuestionIndex < questions.length - 1 || (currentQuestionIndex === questions.length - 1 && gameActive === false)) {
+                goToNext();
+            } else {
+                // maybe if at last question and you haven't answered, warn? but we allow.
+                if (currentQuestionIndex === questions.length - 1) {
+                    // if it's last question you can still click, but do nothing if already answered (quiz complete)
+                    if (!gameActive) {
+                        // quiz complete message already shown, but still.
+                        feedbackEl.innerHTML = '🏁 You finished! press restart.';
+                    }
+                }
+            }
+        });
+
         resetBtn.addEventListener('click', () => {
-            resetGame();
+            restartQuiz();
+        });
+
+        // keyboard handling for reset/next
+        nextBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                nextBtn.click();
+            }
         });
         resetBtn.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                resetGame();
+                restartQuiz();
             }
         });
 
-        // (optional) some extra flair: pressing the same reset with space/enter works
+        // ---------- init ----------
+        loadQuestion(0);
+        updateScoreUI();
     })();
 </script>
 </body>
