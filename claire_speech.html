@@ -111,81 +111,7 @@
             border-left: 5px solid #6a0dad;
         }
         
-        /* Card decorations - UPDATED: removed third card */
-        .card-decoration {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .mini-card {
-            width: 100px;
-            height: 140px;
-            background: linear-gradient(145deg, #fff9e6, #ffe4b5);
-            border-radius: 15px;
-            border: 4px solid #ffd700;
-            box-shadow: 0 10px 0 #b8860b;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transform: rotate(calc(var(--i) * -3deg));
-        }
-        
-        .mini-card.gold {
-            background: linear-gradient(145deg, #ffd700, #ffa500);
-        }
-        
-        .mini-card.blue {
-            background: linear-gradient(145deg, #6ec8ff, #3b9eff);
-        }
-        
-        .mini-card .monster {
-            width: 50px;
-            height: 50px;
-            background: #ff9999;
-            border-radius: 50%;
-            margin: 5px auto;
-            box-shadow: 0 3px 0 #cc6666;
-        }
-        
-        .mini-card .seahorse {
-            width: 35px;
-            height: 55px;
-            background: #4aa3ff;
-            border-radius: 50% 50% 30% 30%;
-            transform: rotate(5deg);
-            margin: 5px auto;
-            position: relative;
-            box-shadow: 0 3px 0 #2d6ca3;
-        }
-        
-        .mini-card .seahorse::after {
-            content: "";
-            position: absolute;
-            width: 15px;
-            height: 8px;
-            background: #ff6b6b;
-            border-radius: 5px;
-            bottom: 10px;
-            left: 10px;
-            transform: rotate(10deg);
-        }
-        
-        .card-label {
-            font-size: 14px;
-            font-weight: bold;
-            margin-top: 8px;
-            color: #2d1b3c;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 3px 10px;
-            border-radius: 20px;
-        }
-        
-        /* Footer - UPDATED: simplified */
+        /* Footer */
         .footer {
             text-align: center;
             margin-top: 30px;
@@ -283,18 +209,6 @@
             <div class="speaker-name">✨ by Claire ✨</div>
         </div>
         
-        <!-- Mini card decorations - UPDATED: only two cards, with updated labels -->
-        <div class="card-decoration">
-            <div class="mini-card gold" style="--i: 1">
-                <div class="monster"></div>
-                <div class="card-label">chubby monster</div>
-            </div>
-            <div class="mini-card blue" style="--i: 2">
-                <div class="seahorse"></div>
-                <div class="card-label">seahorse</div>
-            </div>
-        </div>
-        
         <!-- Speech content -->
         <div class="speech-content">
             <p>Hello everyone! My name is Claire.<br>
@@ -322,7 +236,7 @@
             I hope we can get many Pokémon cards in FGA.</p>
         </div>
         
-        <!-- Footer - UPDATED: simplified to just Thank You -->
+        <!-- Footer -->
         <div class="footer">
             <div class="thank-you">Thank You Everyone!</div>
         </div>
