@@ -18,16 +18,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
         }
         
         .speech-card {
-            max-width: 800px;
+            max-width: 750px;
             width: 100%;
             background: white;
-            border-radius: 40px;
-            box-shadow: 0 20px 40px rgba(106, 13, 173, 0.2), 0 0 0 10px #ffd700, 0 0 0 15px #6a0dad;
-            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 30px rgba(106, 13, 173, 0.2), 0 0 0 8px #ffd700, 0 0 0 12px #6a0dad;
+            padding: 25px;
             position: relative;
             overflow: hidden;
         }
@@ -35,23 +35,23 @@
         /* Pokémon ball decorations */
         .pokeball {
             position: absolute;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             opacity: 0.1;
         }
         
         .pokeball1 {
-            top: 20px;
-            right: 20px;
-            width: 100px;
-            height: 100px;
+            top: 10px;
+            right: 10px;
+            width: 70px;
+            height: 70px;
         }
         
         .pokeball2 {
-            bottom: 20px;
-            left: 20px;
-            width: 80px;
-            height: 80px;
+            bottom: 10px;
+            left: 10px;
+            width: 60px;
+            height: 60px;
         }
         
         .pokeball::before {
@@ -63,77 +63,77 @@
             background: radial-gradient(circle at 30% 30%, #ff4444 40%, #333 45% 60%, white 65%);
         }
         
-        /* Header styles */
+        /* Header styles - REDUCED FONT SIZES */
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 3px dashed #6a0dad;
-            padding-bottom: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #6a0dad;
+            padding-bottom: 10px;
         }
         
         h1 {
-            font-size: 48px;
+            font-size: 36px;
             color: #ff6b6b;
-            text-shadow: 4px 4px 0 #ffd93d, 6px 6px 0 #6a0dad;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #ffd93d, 4px 4px 0 #6a0dad;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
             word-break: break-word;
         }
         
         .speaker-name {
-            font-size: 32px;
+            font-size: 24px;
             color: #6a0dad;
             font-weight: bold;
             display: inline-block;
-            padding: 10px 30px;
-            border-radius: 50px;
+            padding: 5px 20px;
+            border-radius: 40px;
             background-color: #f0e6ff;
             border: 2px solid #ffd700;
-            box-shadow: 0 4px 0 #b8860b;
+            box-shadow: 0 3px 0 #b8860b;
         }
         
-        /* Speech content */
+        /* Speech content - REDUCED FONT SIZES AND MARGINS */
         .speech-content {
             background: #faf5ff;
-            border-radius: 30px;
-            padding: 30px;
-            border: 3px solid #ffd700;
-            margin: 20px 0;
-            font-size: 24px;
-            line-height: 1.6;
+            border-radius: 20px;
+            padding: 15px 20px;
+            border: 2px solid #ffd700;
+            margin: 10px 0;
+            font-size: 18px;
+            line-height: 1.4;
             color: #2d1b3c;
-            box-shadow: inset 0 0 20px rgba(106, 13, 173, 0.1);
+            box-shadow: inset 0 0 15px rgba(106, 13, 173, 0.1);
         }
         
         .speech-content p {
-            margin: 20px 0;
-            padding-left: 20px;
-            border-left: 5px solid #6a0dad;
+            margin: 12px 0;
+            padding-left: 15px;
+            border-left: 4px solid #6a0dad;
         }
         
-        /* Footer */
+        /* Footer - REDUCED FONT SIZE */
         .footer {
             text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
+            margin-top: 10px;
+            padding-top: 10px;
         }
         
         .thank-you {
-            font-size: 48px;
+            font-size: 32px;
             color: #ff6b6b;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             animation: sparkle 2s infinite;
-            text-shadow: 3px 3px 0 #ffd700;
+            text-shadow: 2px 2px 0 #ffd700;
         }
         
         @keyframes sparkle {
-            0%, 100% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ff6b6b; }
-            50% { text-shadow: 0 0 20px #6a0dad, 0 0 30px #ffd700; }
+            0%, 100% { text-shadow: 0 0 5px #ffd700, 0 0 10px #ff6b6b; }
+            50% { text-shadow: 0 0 10px #6a0dad, 0 0 15px #ffd700; }
         }
         
-        /* Stars decoration */
+        /* Stars decoration - SLIGHTLY SMALLER */
         .stars {
             position: absolute;
             width: 100%;
@@ -146,20 +146,22 @@
         .star {
             position: absolute;
             color: #ffd700;
-            font-size: 24px;
-            opacity: 0.3;
+            font-size: 18px;
+            opacity: 0.2;
         }
         
-        .star1 { top: 10%; left: 5%; }
-        .star2 { top: 20%; right: 10%; }
-        .star3 { bottom: 15%; left: 15%; }
-        .star4 { bottom: 25%; right: 20%; }
+        .star1 { top: 5%; left: 5%; }
+        .star2 { top: 15%; right: 8%; }
+        .star3 { bottom: 10%; left: 10%; }
+        .star4 { bottom: 15%; right: 15%; }
         
-        /* Print styles */
+        /* Print styles - OPTIMIZED FOR ONE PAGE */
         @media print {
             body {
                 background: white;
                 padding: 0;
+                min-height: auto;
+                display: block;
             }
             
             .speech-card {
@@ -167,6 +169,8 @@
                 border: 2px solid #6a0dad;
                 padding: 20px;
                 max-width: 100%;
+                margin: 0 auto;
+                page-break-inside: avoid;
             }
             
             .star {
@@ -183,6 +187,11 @@
             
             .thank-you {
                 color: #ff6b6b !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .speech-content {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -209,7 +218,7 @@
             <div class="speaker-name">✨ by Claire ✨</div>
         </div>
         
-        <!-- Speech content -->
+        <!-- Speech content - COMPACT VERSION -->
         <div class="speech-content">
             <p>Hello everyone! My name is Claire.<br>
             Today, I want to talk about Pokémon cards.</p>
