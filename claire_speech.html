@@ -72,7 +72,7 @@
             line-height: 1.4;
             color: #2d1b3c;
             box-shadow: inset 0 0 15px rgba(106, 13, 173, 0.1);
-            position: relative; /* Added for absolute positioning of Pokéball */
+            position: relative;
         }
         
         /* Classic Pokéball in upper-right of purple block */
@@ -116,41 +116,26 @@
             z-index: 2;
         }
         
-        /* Horizontal center line is created by the border-bottom on ::before */
-        
         .speech-content p {
             margin: 12px 0;
             padding-left: 15px;
             border-left: 4px solid #6a0dad;
-            /* Add slight padding-right to avoid text running under Pokéball */
             padding-right: 45px;
+        }
+        
+        /* Special style for the last paragraph (Thank You) */
+        .speech-content p:last-child {
+            border-left: 4px solid #ff6b6b;
+            font-weight: bold;
+            color: #6a0dad;
+            font-size: 20px;
+            margin-top: 15px;
+            padding-top: 5px;
         }
         
         /* Ensure first paragraph doesn't get hidden under Pokéball */
         .speech-content p:first-of-type {
             margin-top: 5px;
-        }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 10px;
-            padding-top: 10px;
-        }
-        
-        .thank-you {
-            font-size: 32px;
-            color: #ff6b6b;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: sparkle 2s infinite;
-            text-shadow: 2px 2px 0 #ffd700;
-        }
-        
-        @keyframes sparkle {
-            0%, 100% { text-shadow: 0 0 5px #ffd700, 0 0 10px #ff6b6b; }
-            50% { text-shadow: 0 0 10px #6a0dad, 0 0 15px #ffd700; }
         }
         
         /* Stars decoration */
@@ -205,18 +190,18 @@
                 print-color-adjust: exact;
             }
             
-            .thank-you {
-                color: #ff6b6b !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            
             .speech-content {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
             
             .pokeball-classic {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .speech-content p:last-child {
+                color: #6a0dad !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -239,7 +224,7 @@
             <div class="speaker-name">✨ by Claire ✨</div>
         </div>
         
-        <!-- Speech content with Pokéball -->
+        <!-- Speech content with Pokéball and 7 paragraphs -->
         <div class="speech-content">
             <!-- Classic Pokéball in upper-right corner -->
             <div class="pokeball-classic"></div>
@@ -267,12 +252,12 @@
             <p>Pokémon cards are amazing.<br>
             We all like them.<br>
             I hope we can get many Pokémon cards in FGA.</p>
+            
+            <!-- 7th paragraph - Thank You Everyone! -->
+            <p>Thank you everyone!</p>
         </div>
         
-        <!-- Footer -->
-        <div class="footer">
-            <div class="thank-you">Thank You Everyone!</div>
-        </div>
+        <!-- No separate footer anymore -->
     </div>
 </body>
 </html>
