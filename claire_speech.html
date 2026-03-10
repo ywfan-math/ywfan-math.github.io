@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Claire's Amazing Pokémon Speech</title>
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+        
+
+        body {
+
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial Rounded', sans-serif;
+
+            background: linear-gradient(135deg, #f5f0ff 0%, #e6d9ff 100%);
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+        }
+
+        
+
+        .speech-card {
+
+            max-width: 800px;
+
+            width: 100%;
+
+            background: white;
+
+            border-radius: 40px;
+
+            box-shadow: 0 20px 40px rgba(106, 13, 173, 0.2), 0 0 0 10px #ffd700, 0 0 0 15px #6a0dad;
+
+            padding: 40px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+        
+
+        /* Pokémon ball decorations */
+
+        .pokeball {
+
+            position: absolute;
+
+            width: 60px;
+
+            height: 60px;
+
+            opacity: 0.1;
+
+        }
+
+        
+
+        .pokeball1 {
+
+            top: 20px;
+
+            right: 20px;
+
+            width: 100px;
+
+            height: 100px;
+
+        }
+
+        
+
+        .pokeball2 {
+
+            bottom: 20px;
+
+            left: 20px;
+
+            width: 80px;
+
+            height: 80px;
+
+        }
+
+        
+
+        .pokeball::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 100%;
+
+            border-radius: 50%;
+
+            background: radial-gradient(circle at 30% 30%, #ff4444 40%, #333 45% 60%, white 65%);
+
+        }
+
+        
+
+        /* Header styles */
+
+        .header {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            border-bottom: 3px dashed #6a0dad;
+
+            padding-bottom: 20px;
+
+        }
+
+        
+
+        h1 {
+
+            font-size: 48px;
+
+            color: #ff6b6b;
+
+            text-shadow: 4px 4px 0 #ffd93d, 6px 6px 0 #6a0dad;
+
+            margin-bottom: 10px;
+
+            letter-spacing: 2px;
+
+            word-break: break-word;
+
+        }
+
+        
+
+        .speaker-name {
+
+            font-size: 32px;
+
+            background: linear-gradient(45deg, #6a0dad, #ff6b6b);
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+
+            font-weight: bold;
+
+            display: inline-block;
+
+            padding: 10px 30px;
+
+            border-radius: 50px;
+
+            background-color: #f0e6ff;
+
+        }
+
+        
+
+        /* Speech content */
+
+        .speech-content {
+
+            background: #faf5ff;
+
+            border-radius: 30px;
+
+            padding: 30px;
+
+            border: 3px solid #ffd700;
+
+            margin: 20px 0;
+
+            font-size: 24px;
+
+            line-height: 1.6;
+
+            color: #2d1b3c;
+
+            box-shadow: inset 0 0 20px rgba(106, 13, 173, 0.1);
+
+        }
+
+        
+
+        .speech-content p {
+
+            margin: 20px 0;
+
+            padding-left: 20px;
+
+            border-left: 5px solid #6a0dad;
+
+        }
+
+        
+
+        /* Card decorations */
+
+        .card-decoration {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            margin: 30px 0;
+
+            flex-wrap: wrap;
+
+        }
+
+        
+
+        .mini-card {
+
+            width: 80px;
+
+            height: 110px;
+
+            background: linear-gradient(145deg, #fff9e6, #ffe4b5);
+
+            border-radius: 12px;
+
+            border: 3px solid #ffd700;
+
+            box-shadow: 0 8px 0 #b8860b;
+
+            position: relative;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transform: rotate(calc(var(--i) * -2deg));
+
+        }
+
+        
+
+        .mini-card.gold {
+
+            background: linear-gradient(145deg, #ffd700, #ffa500);
+
+        }
+
+        
+
+        .mini-card.blue {
+
+            background: linear-gradient(145deg, #6ec8ff, #3b9eff);
+
+        }
+
+        
+
+        .mini-card .monster {
+
+            width: 40px;
+
+            height: 40px;
+
+            background: #ff9999;
+
+            border-radius: 50%;
+
+            margin: 5px auto;
+
+        }
+
+        
+
+        .mini-card .seahorse {
+
+            width: 30px;
+
+            height: 45px;
+
+            background: #4aa3ff;
+
+            border-radius: 50% 50% 30% 30%;
+
+            transform: rotate(10deg);
+
+            margin: 5px auto;
+
+        }
+
+        
+
+        /* Footer */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 30px;
+
+            padding-top: 20px;
+
+            border-top: 2px dotted #6a0dad;
+
+        }
+
+        
+
+        .thank-you {
+
+            font-size: 36px;
+
+            color: #ff6b6b;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            animation: sparkle 2s infinite;
+
+        }
+
+        
+
+        @keyframes sparkle {
+
+            0%, 100% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ff6b6b; }
+
+            50% { text-shadow: 0 0 20px #6a0dad, 0 0 30px #ffd700; }
+
+        }
+
+        
+
+        /* Stars decoration */
+
+        .stars {
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 100%;
+
+            top: 0;
+
+            left: 0;
+
+            pointer-events: none;
+
+        }
+
+        
+
+        .star {
+
+            position: absolute;
+
+            color: #ffd700;
+
+            font-size: 24px;
+
+            opacity: 0.3;
+
+        }
+
+        
+
+        .star1 { top: 10%; left: 5%; }
+
+        .star2 { top: 20%; right: 10%; }
+
+        .star3 { bottom: 15%; left: 15%; }
+
+        .star4 { bottom: 25%; right: 20%; }
+
+        
+
+        /* Print styles */
+
+        @media print {
+
+            body {
+
+                background: white;
+
+                padding: 0;
+
+            }
+
+            
+
+            .speech-card {
+
+                box-shadow: none;
+
+                border: 2px solid #6a0dad;
+
+                padding: 20px;
+
+                max-width: 100%;
+
+            }
+
+            
+
+            .star {
+
+                opacity: 0.1;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="speech-card">
+
+        <!-- Decorative stars -->
+
+        <div class="stars">
+
+            <div class="star star1">⭐</div>
+
+            <div class="star star2">⭐</div>
+
+            <div class="star star3">⭐</div>
+
+            <div class="star star4">⭐</div>
+
+        </div>
+
+        
+
+        <!-- Pokeball decorations -->
+
+        <div class="pokeball pokeball1"></div>
+
+        <div class="pokeball pokeball2"></div>
+
+        
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <h1>Amazing Pokémon Cards</h1>
+
+            <div class="speaker-name">✨ by Claire ✨</div>
+
+        </div>
+
+        
+
+        <!-- Mini card decorations -->
+
+        <div class="card-decoration">
+
+            <div class="mini-card gold" style="--i: 1">
+
+                <div class="monster"></div>
+
+                <span style="font-size: 12px; margin-top: 5px;">✨Chubby✨</span>
+
+            </div>
+
+            <div class="mini-card blue" style="--i: 2">
+
+                <div class="seahorse"></div>
+
+                <span style="font-size: 12px; margin-top: 5px;">🌊Seahorse🌊</span>
+
+            </div>
+
+            <div class="mini-card" style="--i: -1">
+
+                <span style="font-size: 24px;">⚡</span>
+
+                <span style="font-size: 12px; margin-top: 5px;">Pikachu</span>
+
+            </div>
+
+        </div>
+
+        
+
+        <!-- Speech content -->
+
+        <div class="speech-content">
+
+            <p>Hello everyone! My name is Claire.<br>
+
+            Today, I want to talk about Pokémon cards.</p>
+
+            
+
+            <p>Pokémon cards are amazing.<br>
+
+            They are beautiful.<br>
+
+            They have many colors and shapes.</p>
+
+            
+
+            <p>This is a golden Pokémon card.<br>
+
+            Its color is gold, and it has a colorful chubby monster on it.<br>
+
+            It's so cute, like my daddy.</p>
+
+            
+
+            <p>This is my favorite Pokémon card.<br>
+
+            Its color is blue. It has a seahorse on it. The seahorse has a big mouth.</p>
+
+            
+
+            <p>Pokémon cards are amazing.<br>
+
+            When students are good, they can get more Pokémon cards.<br>
+
+            I did show and tell, I did well in math and English, so I get many Pokémon cards.<br>
+
+            My friends are good. They get their Pokémon cards.<br>
+
+            We're all amazing!</p>
+
+            
+
+            <p>Pokémon cards are amazing.<br>
+
+            We all like them.<br>
+
+            I hope we can get many Pokémon cards in FGA.</p>
+
+        </div>
+
+        
+
+        <!-- Footer -->
+
+        <div class="footer">
+
+            <div class="thank-you">Thank You Everyone!</div>
+
+            <div style="margin-top: 15px; font-size: 20px; color: #6a0dad;">
+
+                🌟🌟🌟 You're All Amazing! 🌟🌟🌟
+
+            </div>
+
+        </div>
+
+        
+
+        <!-- FGA note -->
+
+        <div style="text-align: center; margin-top: 20px; font-size: 18px; color: #999; font-style: italic;">
+
+            FGA Kindergarten • Speech Contest
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
